@@ -14,8 +14,8 @@ public class Bank {
 	private final List<ClientRegistrationListener> listeners = new ArrayList<>();
 	private final EmailService emailService = new EmailService();
 
-	private final Client bankSystem = new Client("Bank System", null, null);
-	private final Client bankSystemAdmin = new Client("System admin", null, null);
+	private final Client bankSystem = new Client("Bank System", null, null, null);
+	private final Client bankSystemAdmin = new Client("System admin", null, null, null);
 	
 	private int printedClients = 0;
 	private int emailedClients = 0;

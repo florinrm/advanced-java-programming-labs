@@ -58,6 +58,12 @@ public class BankReportStreams {
         return new TreeMap<>(bank.getClients().stream().collect(Collectors.groupingBy(Client::getCity)));
     }
 
+    public Map<String, List<Client>> getClientsByBirthdayMonth(Bank bank) {
+        return new TreeMap<>(
+                bank.getClients().stream()
+                        .collect(Collectors.groupingBy(client -> client.getBirthday().getMonth().name())));
+    }
+
     private double getClientAccountsTotalSum(Client client) {
         return client.getAccounts().stream().map(Account::getBalance).reduce(0.0, Double::sum);
     }

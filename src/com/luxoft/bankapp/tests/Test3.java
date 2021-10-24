@@ -12,6 +12,8 @@ import com.luxoft.bankapp.exceptions.NotEnoughFundsException;
 import com.luxoft.bankapp.exceptions.OverdraftLimitExceededException;
 import com.luxoft.bankapp.service.BankService;
 
+import java.time.LocalDate;
+
 public class Test3 {
 	
 	@Test(expected=IllegalArgumentException.class)
@@ -48,7 +50,7 @@ public class Test3 {
 	@Test(expected=ClientExistsException.class)
 	public void testClientExists() throws ClientExistsException {
 		Bank bank = new Bank();
-		Client client1 = new Client("Smith John", Gender.MALE, "Boston");
+		Client client1 = new Client("Smith John", Gender.MALE, "Boston", LocalDate.of(1997, 7, 7));
 		client1.addAccount(new SavingAccount(1, 1000.0));
 		client1.addAccount(new CheckingAccount(2, 1000.0, 100.0));
 		
