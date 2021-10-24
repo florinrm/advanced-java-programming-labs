@@ -57,4 +57,15 @@ public class Test3 {
 		
 	}
 
+	@Test
+	public void testGetById() {
+		CheckingAccount checkingAccount = new CheckingAccount(2, 1000.0, 100.0);
+		checkingAccount.getById(checkingAccount.getId());
+		checkingAccount.getAll();
+
+		SavingAccount savingAccount = new SavingAccount(1, 1000.0);
+		savingAccount.getById(savingAccount.getId());
+		savingAccount.getAll();
+	}
+
 }
