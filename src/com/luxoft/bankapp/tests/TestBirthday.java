@@ -10,12 +10,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class TestBirthday {
-    private List<Client> clientList;
     private Bank bank;
 
     @Before
@@ -98,9 +95,9 @@ public class TestBirthday {
                     || birthdayNowDate.isEqual(nextMonth);
         } ).collect(Collectors.toList());
         System.out.println(clients);
-        Assert.assertTrue(clients.contains(clientList.get(0)));
-        Assert.assertTrue(clients.contains(clientList.get(3)));
-        Assert.assertTrue(clients.contains(clientList.get(8)));
+        Assert.assertTrue(clients.contains(bank.getClients().stream().toList().get(0)));
+        Assert.assertTrue(clients.contains(bank.getClients().stream().toList().get(3)));
+        Assert.assertTrue(clients.contains(bank.getClients().stream().toList().get(8)));
     }
 
     @Test

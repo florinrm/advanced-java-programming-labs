@@ -40,7 +40,7 @@ public class TestEmailService {
             } catch (EmailException e) {
                 e.printStackTrace();
             }
-            Thread.sleep(100);
+            Thread.sleep(1000);
         }
 
         assertEquals(NO_EMAILS, emailService.getSentEmails());
