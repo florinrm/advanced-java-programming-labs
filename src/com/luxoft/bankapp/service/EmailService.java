@@ -50,6 +50,9 @@ public class EmailService implements Runnable {
 
     public void close() {
         isServiceClosed = true;
+        synchronized (emailStorage) {
+            emailStorage.notify();
+        }
         try {
             currentThread.join();
         } catch (InterruptedException e) {
